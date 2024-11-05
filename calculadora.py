@@ -1,3 +1,6 @@
+import numpy
+from scipy.special import bernoulli
+
 def suma(num1,num2):
     suma = num1 + num2
     return suma
@@ -52,7 +55,7 @@ def coseno(radianes,terminos):
     return aprox
 
 def tangente(radianes,terminos):
-    tangente = seno(radianes,terminos)/coseno(radianes,terminos) # Utilizar la serie de taylor para la tangente es increíblemente difícil debido a que usa números de bernoulli, usamos esta definición preferiblemente
+    tangente = seno(radianes,terminos)/coseno(radianes,terminos) # ya se puede meter la serie de taylor porque hay una librería que nos permite generar números de bernoulli
     return tangente
 
 print("Bienvenido al programa, por favor elija una elección:\n")
@@ -100,8 +103,8 @@ while seleccion in (1,2,3,4,5):
                     fact = factorial(numero)
                     print(f"El factorial del número es: {fact}")
                 case 8:
-                    print("Saliendo del programa...\n")
-                    break
+                    print("Saliendo del menú...\n")
+                    seleccion = int(input("Ingrese una selección para la calculadora: "))
         if seleccion == 2:
             print("Escoja la operacion que desea realizar:\n")
             print("1. Razón trigonométrica Sin(x)\n2. Razón trigonométrica Cos(x)\n3. Razón trigonométrica Tan(x)\n4. Salir del programa")
@@ -147,9 +150,35 @@ while seleccion in (1,2,3,4,5):
                     aprox = tangente(xrad,terminos)
                     print(f"Una aproximación de la función tangente hasta {terminos} términos es: {aprox}")
                 case 4:
-                    print("Saliendo del programa...\n")
-                    break           
+                    print("Saliendo del menú...\n")
+                    seleccion = int(input("Ingrese una selección para la calculadora: "))       
         if seleccion == 3:
-            continue
+            print("Escoja la operacion que desea realizar:\n")
+            print("1. Suma de matrices 2x2\n2. Resta de matrices 2x2\n3. Multiplicación de matrices 2x2\n4. Determinante de una matriz 2x2\n5. Salir del programa")
+            seleccion2 = int(input("Ingrese una selección para la calculadora: "))
+            match seleccion2:
+                case 1:
+                    continue
+                case 2:
+                    continue
+                case 3:
+                    continue
+                case 4:
+                    continue
+                case 5:
+                    print("Saliendo del menú...\n")
+                    seleccion = int(input("Ingrese una selección para la calculadora: "))
         if seleccion == 4:
-            continue
+            print("Escoja la operacion que desea realizar:\n")
+            print("1. Promedio de una muestra\n2. Desviación estándar de una muestra\n3. Varianza de una muestra\n4. Salir del programa")
+            seleccion2 = int(input("Ingrese una selección para la calculadora: "))
+            match seleccion2:
+                case 1:
+                    continue
+                case 2:
+                    continue
+                case 3:
+                    continue
+                case 4:
+                    print("Saliendo del menú...\n")
+                    seleccion = int(input("Ingrese una selección para la calculadora: "))
