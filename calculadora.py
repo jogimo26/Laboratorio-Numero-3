@@ -203,7 +203,7 @@ while seleccion in [1,2,3,4]:
             print("1. Operaciones básicas aritméticas\n2. Complemento para funciones trigonométricas\n3. Operaciones con matrices\n4. Estadística Descriptiva\nCualquier otro número: Salir del programa") 
     if seleccion == 3:
         print("Escoja la operacion que desea realizar:\n")
-        print("1. Suma de matrices NxN\n2. Resta de matrices NxN\n3. Multiplicación de matrices 2x2\n4. Determinante de una matriz 2x2\nCualquier otro número: Salir del programa")
+        print("1. Suma de matrices NxN\n2. Resta de matrices NxN\n3. Multiplicación de matrices NxN\n4. Determinante de una matriz 2x2\nCualquier otro número: Salir del programa")
         seleccion2 = int(input("Ingrese una selección para la calculadora: "))
         match seleccion2:
             case 1:
