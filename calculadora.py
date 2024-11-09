@@ -76,10 +76,46 @@ def desviacionestandar(tmuestra,muestra):
     desvestandar = raizcuadrada(varianzamuestra,0.000000001)
     return desvestandar
 
+def sumamatrices(matA,matB,longitud):
+    matSuma = []
+    for i in range(longitud):
+        fila = []
+        for j in range(len(matB)):
+            sumad = matA[i][j]+matA[i][j]
+            fila.append(sumad)
+        matSuma.append(fila)
+    return matSuma
+
+def restamatrices(matA,matB,longitud):
+    matResta = []
+    for i in range(longitud):
+        fila = []
+        for j in range(len(matB)):
+            sumad = matA[i][j]-matA[i][j]
+            fila.append(sumad)
+        matResta.append(fila)
+    return matResta
+
+def multiplicarmatrices(matA,matB,longitud):
+    matMulti = []
+    for i in range(longitud):
+        fila = []
+        for j in range(longitud):
+            sumador = 0
+            for k in range(longitud):
+                sumador += matA[i][k]*matB[k][j]
+            fila.append(sumador)
+        matMulti.append(fila)
+    return matMulti
+
+def determinante2x2(mat):
+    determinante = (mat[0][0]*mat[1][1])-(mat[0][1]*mat[1][0])
+    return determinante
 print("Bienvenido al programa, por favor elija una elección:\n")
+
 seleccion = 1
 while seleccion in [1,2,3,4]:
-    print("1. Operaciones básicas aritméticas\n2. Complemento para funciones trigonométricas\n3. Operaciones con matrices de 2x2\n4. Estadística Descriptiva\nCualquier otro número: Salir del programa")
+    print("1. Operaciones básicas aritméticas\n2. Complemento para funciones trigonométricas\n3. Operaciones con matrices\n4. Estadística Descriptiva\nCualquier otro número: Salir del programa")
     seleccion = int(input("Ingrese una selección para la calculadora: "))
     print("\n")
     if seleccion == 1:
@@ -167,17 +203,88 @@ while seleccion in [1,2,3,4]:
             print("1. Operaciones básicas aritméticas\n2. Complemento para funciones trigonométricas\n3. Operaciones con matrices\n4. Estadística Descriptiva\nCualquier otro número: Salir del programa") 
     if seleccion == 3:
         print("Escoja la operacion que desea realizar:\n")
-        print("1. Suma de matrices 2x2\n2. Resta de matrices 2x2\n3. Multiplicación de matrices 2x2\n4. Determinante de una matriz 2x2\nCualquier otro número: Salir del programa")
+        print("1. Suma de matrices NxN\n2. Resta de matrices NxN\n3. Multiplicación de matrices 2x2\n4. Determinante de una matriz 2x2\nCualquier otro número: Salir del programa")
         seleccion2 = int(input("Ingrese una selección para la calculadora: "))
         match seleccion2:
             case 1:
-                continue
+                matA = []
+                matB = []
+                longitud = int(input("Ingrese la longitud de las filas o columnas en la matriz: "))
+                print("Ingrese los datos de la matriz A: ")
+                for i in range(longitud):
+                    fila = []
+                    for j in range(longitud):
+                        dato = int(input(f"Ingrese el dato de la fila {i+1}, columna {j+1}: "))
+                        fila.append(dato)
+                    matA.append(fila)
+                print(f"Su matriz A es: {matA}")
+                print("Ingrese los datos de la matriz B: ")
+                for i in range(longitud):
+                    fila = []
+                    for j in range(longitud):
+                        dato = int(input(f"Ingrese el dato de la fila {i+1}, columna {j+1}: "))
+                        fila.append(dato)
+                    matB.append(fila)
+                print(f"Su matriz B es: {matB}")
+                sumamat = sumamatrices(matA,matB,longitud)
+                print(f"La suma de sus matrices es: {sumamat}")
             case 2:
-                continue
+                matA = []
+                matB = []
+                longitud = int(input("Ingrese la longitud de las filas o columnas en la matriz: "))
+                print("Ingrese los datos de la matriz A: ")
+                for i in range(longitud):
+                    fila = []
+                    for j in range(longitud):
+                        dato = int(input(f"Ingrese el dato de la fila {i+1}, columna {j+1}: "))
+                        fila.append(dato)
+                    matA.append(fila)
+                print(f"Su matriz A es: {matA}")
+                print("Ingrese los datos de la matriz B: ")
+                for i in range(longitud):
+                    fila = []
+                    for j in range(longitud):
+                        dato = int(input(f"Ingrese el dato de la fila {i+1}, columna {j+1}: "))
+                        fila.append(dato)
+                    matB.append(fila)
+                print(f"Su matriz B es: {matB}")
+                restamat = restamatrices(matA,matB,longitud)
+                print(f"La resta de sus matrices es: {restamat}")
             case 3:
-                continue
+                matA = []
+                matB = []
+                longitud = int(input("Ingrese la longitud de las filas o columnas en la matriz: "))
+                print("Ingrese los datos de la matriz A: ")
+                for i in range(longitud):
+                    fila = []
+                    for j in range(longitud):
+                        dato = int(input(f"Ingrese el dato de la fila {i+1}, columna {j+1}: "))
+                        fila.append(dato)
+                    matA.append(fila)
+                print(f"Su matriz A es: {matA}")
+                print("Ingrese los datos de la matriz B: ")
+                for i in range(longitud):
+                    fila = []
+                    for j in range(longitud):
+                        dato = int(input(f"Ingrese el dato de la fila {i+1}, columna {j+1}: "))
+                        fila.append(dato)
+                    matB.append(fila)
+                print(f"Su matriz B es: {matB}")
+                multimat = multiplicarmatrices(matA,matB,longitud)
+                print(f"La multiplicación de sus matrices es: {multimat}")
             case 4:
-                continue
+                mat = []
+                longitud = 2
+                print("Ingrese los datos de la matriz A: ")
+                for i in range(longitud):
+                    fila = []
+                    for j in range(longitud):
+                        dato = int(input(f"Ingrese el dato de la fila {i+1}, columna {j+1}: "))
+                        fila.append(dato)
+                    mat.append(fila)
+                print(f"Su matriz A es: {mat}")
+                det = determinante2x2(mat)
+                print(f"La determinante de la matriz es: {det}")
         if seleccion2 >= 8 or seleccion2 < 1:
             print("Saliendo del menú...\n")
             print("1. Operaciones básicas aritméticas\n2. Complemento para funciones trigonométricas\n3. Operaciones con matrices\n4. Estadística Descriptiva\nCualquier otro número: Salir del programa")
