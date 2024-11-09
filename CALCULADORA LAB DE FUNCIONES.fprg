@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CALCULADORA LAB DE FUNCIONES"/>
+        <attribute name="authors" value="fabia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-08 11:39:34 p. m."/>
+        <attribute name="created" value="ZmFiaWE7RkFCSUFOT1NPUklPOzIwMjQtMTEtMDQ7MDg6MzY6MjQgcC4gbS47Mjg2MA=="/>
+        <attribute name="edited" value="ZmFiaWE7RkFCSUFOT1NPUklPOzIwMjQtMTEtMDg7MTE6Mzk6MzQgcC4gbS47NzsyOTc2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="seleccion" type="Integer" array="False" size=""/>
+            <declare name="num1, num2" type="Integer" array="False" size=""/>
+            <declare name="suma1, suma" type="Integer" array="False" size=""/>
+            <declare name="resta, resta1" type="Integer" array="False" size=""/>
+            <declare name="multiplicacion, mult" type="Integer" array="False" size=""/>
+            <declare name="division, divisor, dividendo, div" type="Integer" array="False" size=""/>
+            <declare name="potenciacion, pot, base, exp, resultado" type="Integer" array="False" size=""/>
+            <declare name="raizcuadrada, rad" type="Integer" array="False" size=""/>
+            <declare name="estimacion" type="Real" array="False" size=""/>
+            <declare name="maxint" type="Integer" array="False" size=""/>
+            <declare name="precision" type="Real" array="False" size=""/>
+            <declare name="newest" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="factorial, numero, n, fact" type="Integer" array="False" size=""/>
+            <declare name="seno, xrad, x, coseno, tangente" type="Real" array="False" size=""/>
+            <declare name="terminos" type="Real" array="False" size=""/>
+            <declare name="aprox" type="Real" array="False" size=""/>
+            <declare name="tmuestra" type="Integer" array="False" size=""/>
+            <declare name="varianza, desviacionestanadar" type="Real" array="False" size=""/>
+            <declare name="promedio" type="Real" array="False" size=""/>
+            <output expression="&quot;Bienvenido al programa, por favor elija una elecci&#243;n:&quot;" newline="True"/>
+            <output expression="&quot;1.Operaciones b&#225;sicas aritm&#233;ticas&quot;" newline="True"/>
+            <output expression="&quot;2.Complemento para funciones trigonom&#233;tricas&quot;" newline="True"/>
+            <output expression="&quot;3. Operaciones con matrices&quot;" newline="True"/>
+            <output expression="&quot;4.Estad&#237;stica Descriptiva&quot;" newline="True"/>
+            <output expression="&quot;Cualquier otro n&#250;mero: Salir del programa&quot;" newline="True"/>
+            <output expression="&quot;Ingrese una selecci&#243;n para la calculadora: &quot;" newline="True"/>
+            <input variable="seleccion"/>
+            <while expression="seleccion = 1 OR seleccion = 2 OR seleccion = 3 OR seleccion = 4 OR seleccion = 5">
+                <if expression="seleccion == 2">
+                    <then>
+                        <declare name="seleccion2" type="Integer" array="False" size=""/>
+                        <output expression="&quot;Escoja la operacion que desea realizar: &quot;" newline="True"/>
+                        <output expression="&quot;1. Raz&#243;n trigonom&#233;trica Sin(x)&quot;" newline="True"/>
+                        <output expression="&quot; 2. Raz&#243;n trigonom&#233;trica Cos(x)&quot;" newline="True"/>
+                        <output expression="&quot;3. Raz&#243;n trigonom&#233;trica Tan(x) &quot;" newline="True"/>
+                        <output expression="&quot;4. Salir del programa &quot;" newline="True"/>
+                        <output expression="&quot;Ingrese una selecci&#243;n para la calculadora: &quot;" newline="True"/>
+                        <input variable="seleccion2"/>
+                        <if expression="seleccion2 == 1">
+                            <then>
+                                <output expression="&quot;Ingrese un valor para x (En grados): &quot;" newline="True"/>
+                                <input variable="x"/>
+                                <while expression="x &gt; 360 or x &lt; 0">
+                                    <if expression="x  &gt; 360">
+                                        <then>
+                                            <assign variable="x" expression="x-360"/>
+                                        </then>
+                                        <else>
+                                            <if expression="x &lt; 0">
+                                                <then>
+                                                    <assign variable="x" expression="x+360"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </while>
+                                <output expression="&quot;Ingrese la cantidad de t&#233;rminos para la cual calcular la funci&#243;n seno: &quot;" newline="True"/>
+                                <input variable="terminos"/>
+                                <assign variable="xrad" expression="x*3.1415/180"/>
+                                <assign variable="xrad" expression="xrad"/>
+                                <assign variable="aprox" expression="0.0"/>
+                                <assign variable="aprox" expression="seno(xrad,terminos)"/>
+                                <output expression="&quot;Una aproximaci&#243;n de la funci&#243;n seno hasta &quot;  &amp;terminos" newline="False"/>
+                                <output expression="&quot;    terminos es : &quot; &amp;aprox" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="seleccion2 == 2">
+                                    <then>
+                                        <output expression="&quot;Ingrese un valor para x (En grados): &quot;" newline="True"/>
+                                        <input variable="x"/>
+                                        <while expression="x &gt; 360 or x &lt; 0">
+                                            <if expression="x  &gt; 360">
+                                                <then>
+                                                    <assign variable="x" expression="x-360"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="x &lt; 0">
+                                                        <then>
+                                                            <assign variable="x" expression="x+360"/>
+                                                        </then>
+                                                        <else/>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </while>
+                                        <output expression="&quot;Ingrese la cantidad de t&#233;rminos para la cual calcular la funci&#243;n coseno : &quot;" newline="True"/>
+                                        <input variable="terminos"/>
+                                        <assign variable="xrad" expression="x*3.1415/180"/>
+                                        <assign variable="xrad" expression="xrad"/>
+                                        <assign variable="aprox" expression="0.0"/>
+                                        <assign variable="aprox" expression="coseno(xrad,terminos)"/>
+                                        <output expression="&quot;Una aproximaci&#243;n de la funci&#243;n coseno hasta &quot;  &amp;terminos" newline="False"/>
+                                        <output expression="&quot;  terminos es : &quot; &amp;aprox" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="seleccion2 == 3">
+                                            <then>
+                                                <output expression="&quot;Ingrese un valor para x (En grados): &quot;" newline="True"/>
+                                                <input variable="x"/>
+                                                <while expression="x &gt; 360 or x &lt; 0">
+                                                    <if expression="x  &gt; 360">
+                                                        <then>
+                                                            <assign variable="x" expression="x-360"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="x &lt; 0">
+                                                                <then>
+                                                                    <assign variable="x" expression="x+360"/>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </while>
+                                                <output expression="&quot;Ingrese la cantidad de t&#233;rminos para la cual calcular la funci&#243;n Tangente : &quot;" newline="True"/>
+                                                <input variable="terminos"/>
+                                                <assign variable="xrad" expression="x*3.1415/180"/>
+                                                <assign variable="xrad" expression="xrad"/>
+                                                <assign variable="aprox" expression="0.0"/>
+                                                <assign variable="aprox" expression="tangente(xrad,terminos)"/>
+                                                <output expression="&quot;Una aproximaci&#243;n de la funci&#243;n Tangente hasta &quot;  &amp;terminos" newline="False"/>
+                                                <output expression="&quot;  terminos es : &quot; &amp;aprox" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="seleccion2 == 4">
+                                                    <then>
+                                                        <output expression="&quot;saliendo del programa&quot;" newline="True"/>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                                <breakpoint expression="" always="True"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="seleccion==3">
+                            <then/>
+                            <else>
+                                <if expression="seleccion == 4">
+                                    <then>
+                                        <declare name="seleccion2" type="Integer" array="False" size=""/>
+                                        <output expression="(&quot;Escoja la operacion que desea realizar: &quot;)" newline="True"/>
+                                        <output expression="&quot;1. promedio de una muestra &quot;" newline="True"/>
+                                        <output expression="&quot;2.desviacion estandar de una muestra &quot;" newline="True"/>
+                                        <output expression="&quot;3. varianza de una muestra &quot;" newline="True"/>
+                                        <output expression="&quot;Cualquier otro numero : salir del programa &quot;" newline="True"/>
+                                        <input variable="seleccion2"/>
+                                        <if expression="seleccion2==1">
+                                            <then>
+                                                <output expression="&quot;Ingrese el tama&#241;o de la muestra que va a ingresar: &quot;" newline="True"/>
+                                                <input variable="tmuestra"/>
+                                                <declare name="muestra" type="Real" array="True" size="tmuestra"/>
+                                                <assign variable="i" expression="1"/>
+                                                <for variable="i" start="0" end="tmuestra-1" direction="inc" step="1">
+                                                    <output expression="&quot;Ingrese el dato &quot; &amp;i+1" newline="False"/>
+                                                    <output expression="&quot; para agregar a la muestra: &quot;" newline="True"/>
+                                                    <input variable="muestra[i]"/>
+                                                </for>
+                                                <declare name="prom" type="Real" array="False" size=""/>
+                                                <assign variable="prom" expression="promedio(tmuestra,muestra)"/>
+                                                <output expression="&quot;El promedio de su muestra escogida es:  &quot; &amp;prom" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="seleccion2==2">
+                                                    <then>
+                                                        <output expression="&quot;Ingrese el tama&#241;o de la muestra que va a ingresar: &quot;" newline="True"/>
+                                                        <input variable="tmuestra"/>
+                                                        <declare name="muestra" type="Real" array="True" size="tmuestra"/>
+                                                        <assign variable="i" expression="1"/>
+                                                        <for variable="i" start="0" end="tmuestra-1" direction="inc" step="1">
+                                                            <output expression="&quot;Ingrese el dato &quot; &amp;i+1" newline="False"/>
+                                                            <output expression="&quot; para agregar a la muestra: &quot;" newline="True"/>
+                                                            <input variable="muestra[i]"/>
+                                                        </for>
+                                                        <declare name="desvestandar" type="Real" array="False" size=""/>
+                                                        <assign variable="desvestandar" expression="desviacionestandar(tmuestra,muestra)"/>
+                                                        <output expression="&quot;La desviacion estandar de su muestra escogida es:  &quot; &amp;desvestandar" newline="True"/>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                            </else>
+                                        </if>
+                                        <breakpoint expression="" always="True"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <while expression="seleccion == 1">
+                    <declare name="seleccion2" type="Integer" array="False" size=""/>
+                    <output expression="&quot;Escoja la operacion que desea realizar:&quot;" newline="True"/>
+                    <output expression="&quot;1.Sumar 2 n&#250;meros&quot;" newline="True"/>
+                    <output expression="&quot;2. Restar 2 n&#250;meros &quot;" newline="True"/>
+                    <output expression="&quot;3. Multiplicar 2 numeros &quot;" newline="True"/>
+                    <output expression="&quot;4. Dividir 2 n&#250;meros&quot;" newline="True"/>
+                    <output expression="&quot;5. Potenciaci&#243;n (Base, Exponente) &quot;" newline="True"/>
+                    <output expression="&quot;6. Ra&#237;z Cuadrada (Radicando, Precisi&#243;n de la estimaci&#243;n) &quot;" newline="True"/>
+                    <output expression="&quot;7. Factorial de un n&#250;mero&quot;" newline="True"/>
+                    <output expression="&quot;8. Salir del men&#250;&quot;" newline="True"/>
+                    <output expression="&quot;Ingrese una selecci&#243;n para la calculadora: &quot;" newline="True"/>
+                    <input variable="seleccion2"/>
+                    <if expression="seleccion2 ==1">
+                        <then>
+                            <output expression="&quot;Ingrese el primer n&#250;mero para sumar: &quot;" newline="True"/>
+                            <input variable="num1"/>
+                            <output expression="&quot;Ingrese el segundo n&#250;mero para sumar: &quot;" newline="True"/>
+                            <input variable="num2"/>
+                            <assign variable="suma1" expression="suma(num1,num2)"/>
+                            <output expression="&quot;La suma de los 2 n&#250;meros es: &quot; &amp;suma1" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="seleccion2 == 2">
+                                <then>
+                                    <output expression="&quot;Ingrese el primer n&#250;mero para restar : &quot;" newline="True"/>
+                                    <input variable="num1"/>
+                                    <output expression="&quot;Ingrese el segundo n&#250;mero para restar: &quot;" newline="True"/>
+                                    <input variable="num2"/>
+                                    <assign variable="resta1" expression="resta(num1,num2)"/>
+                                    <output expression="&quot;La resta de los 2 n&#250;meros es: &quot; &amp;resta1" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="seleccion2 == 3">
+                                        <then>
+                                            <output expression="&quot;Ingrese el primer n&#250;mero para multiplicar : &quot;" newline="True"/>
+                                            <input variable="num1"/>
+                                            <output expression="&quot;Ingrese el segundo n&#250;mero para multiplicar : &quot;" newline="True"/>
+                                            <input variable="num2"/>
+                                            <assign variable="mult" expression="multiplicacion(num1,num2)"/>
+                                            <output expression="&quot;La multiplicacion de los 2 n&#250;meros es: &quot; &amp;mult" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="seleccion2 == 4">
+                                                <then>
+                                                    <output expression="&quot;Ingrese el divisor: &quot;" newline="True"/>
+                                                    <input variable="divisor"/>
+                                                    <output expression="&quot;Ingrese el dividendo : &quot;" newline="True"/>
+                                                    <input variable="dividendo"/>
+                                                    <assign variable="div" expression="division(divisor,dividendo)"/>
+                                                    <output expression="&quot;La division de los 2 n&#250;meros es: &quot; &amp;div" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="seleccion2 == 5">
+                                                        <then>
+                                                            <output expression="&quot;Ingrese la base para la potencia : &quot;" newline="True"/>
+                                                            <input variable="base"/>
+                                                            <output expression="&quot;Ingrese el exponente para la potencia : &quot;" newline="True"/>
+                                                            <input variable="exp"/>
+                                                            <assign variable="pot" expression="potenciacion(base,exp)"/>
+                                                            <output expression="&quot;su potencia es : &quot; &amp;pot" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="seleccion2 == 6">
+                                                                <then>
+                                                                    <output expression="&quot;Ingrese el radicando para la raiz : &quot;" newline="True"/>
+                                                                    <input variable="rad"/>
+                                                                    <output expression="&quot;Ingrese la precisi&#243;n con la cual calcular la ra&#237;z (mientras m&#225;s cerca sea a 0, m&#225;s precisa ser&#225;): &quot;" newline="True"/>
+                                                                    <input variable="precision"/>
+                                                                    <assign variable="estimacion" expression="rad"/>
+                                                                    <assign variable="maxint" expression="estimacion"/>
+                                                                    <assign variable="newest" expression="(estimacion + rad / estimacion) / 2"/>
+                                                                    <assign variable="i" expression="1"/>
+                                                                    <assign variable="estimacion" expression="raizcuadrada(rad,precision,estimacion,maxint,newest,i)"/>
+                                                                    <output expression="&quot;La aproximacion de la raiz es  : &quot; &amp;estimacion" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="seleccion2 == 7">
+                                                                        <then>
+                                                                            <output expression="&quot;Ingrese el n&#250;mero a el cual se le va a hacer el factorial: &quot;" newline="True"/>
+                                                                            <input variable="numero"/>
+                                                                            <assign variable="n" expression="1"/>
+                                                                            <assign variable="fact" expression="factorial(numero)"/>
+                                                                            <output expression="&quot;el factorial del numero es : &quot; &amp;fact" newline="True"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <if expression="seleccion2 == 8">
+                                                                                <then>
+                                                                                    <output expression="&quot;saliendo del programa...&quot;" newline="True"/>
+                                                                                    <breakpoint expression="" always="True"/>
+                                                                                </then>
+                                                                                <else/>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </while>
+            </while>
+            <output expression="&quot;saliste del programa&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="coseno" type="Real" variable="aprox">
+        <parameters>
+            <parameter name="xrad" type="Real" array="False"/>
+            <parameter name="terminos" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="aprox" type="Real" array="False" size=""/>
+            <assign variable="aprox" expression="0.0"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <for variable="n" start="0" end="terminos-1" direction="inc" step="1">
+                <declare name="numerador" type="Real" array="False" size=""/>
+                <assign variable="numerador" expression="potenciacion(xrad,2*n)"/>
+                <declare name="denominador" type="Real" array="False" size=""/>
+                <assign variable="denominador" expression="factorial(2*n)"/>
+                <assign variable="aprox" expression="aprox + (potenciacion(-1,n)*(numerador/denominador))"/>
+            </for>
+        </body>
+    </function>
+    <function name="desviacionestandar" type="Real" variable="desvestandar">
+        <parameters>
+            <parameter name="tmuestra" type="Integer" array="False"/>
+            <parameter name="muestra" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="varianzamuestra" type="Integer" array="False" size=""/>
+            <assign variable="varianzamuestra" expression="varianza(tmuestra,muestra)"/>
+            <declare name="desvestandar" type="Real" array="False" size=""/>
+            <assign variable="desvestandar" expression="raizcuadrada(varianzamuestra, 0.000000001, varianzamuestra / 2, 100, (varianzamuestra + varianzamuestra / (varianzamuestra / 2)) / 2, 1)"/>
+        </body>
+    </function>
+    <function name="division" type="Integer" variable="div">
+        <parameters>
+            <parameter name="divisor" type="Integer" array="False"/>
+            <parameter name="dividendo" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="div" type="Integer" array="False" size=""/>
+            <assign variable="div" expression="divisor/dividendo"/>
+        </body>
+    </function>
+    <function name="factorial" type="Integer" variable="resultado">
+        <parameters>
+            <parameter name="numero" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Integer" array="False" size=""/>
+            <assign variable="resultado" expression="1"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <for variable="n" start="numero" end="1" direction="dec" step="1">
+                <assign variable="resultado" expression="resultado*n"/>
+            </for>
+            <if expression="numero == 0">
+                <then>
+                    <assign variable="resultado" expression="1"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="multiplicacion" type="Integer" variable="mult">
+        <parameters>
+            <parameter name="num1" type="Integer" array="False"/>
+            <parameter name="num2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="mult" type="Integer" array="False" size=""/>
+            <assign variable="mult" expression="num1*num2"/>
+        </body>
+    </function>
+    <function name="potenciacion" type="Real" variable="pot">
+        <parameters>
+            <parameter name="base" type="Real" array="False"/>
+            <parameter name="exp" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="pot" type="Real" array="False" size=""/>
+            <assign variable="pot" expression="1.0"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="1"/>
+            <for variable="i" start="1" end="exp" direction="inc" step="1">
+                <assign variable="pot" expression="pot*base"/>
+            </for>
+        </body>
+    </function>
+    <function name="promedio" type="Real" variable="prom">
+        <parameters>
+            <parameter name="tmuestra" type="Integer" array="False"/>
+            <parameter name="muestra" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="sumadedatos" type="Real" array="False" size=""/>
+            <declare name="prom" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="sumadedatos" expression="0"/>
+            <for variable="i" start="0" end="tmuestra-1" direction="inc" step="1">
+                <assign variable="sumadedatos" expression="sumadedatos+muestra[i]"/>
+            </for>
+            <assign variable="prom" expression="sumadedatos/tmuestra"/>
+        </body>
+    </function>
+    <function name="raizcuadrada" type="Integer" variable="estimacion">
+        <parameters>
+            <parameter name="rad" type="Integer" array="False"/>
+            <parameter name="precision" type="Real" array="False"/>
+            <parameter name="estimacion" type="Real" array="False"/>
+            <parameter name="maxint" type="Integer" array="False"/>
+            <parameter name="newest" type="Real" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="estimacion" expression="0"/>
+            <assign variable="i" expression="1"/>
+            <if expression="rad &lt; 0">
+                <then>
+                    <output expression="&quot;La ra&#237;z cuadrada de un n&#250;mero negativo no est&#225; definida dentro de los n&#250;meros reales&quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="estimacion" expression="rad/2"/>
+                    <for variable="i" start="1" end="maxint" direction="inc" step="1">
+                        <assign variable="newest" expression="(estimacion + rad / estimacion) / 2"/>
+                        <assign variable="estimacion" expression="newest"/>
+                    </for>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="resta" type="Integer" variable="resta">
+        <parameters>
+            <parameter name="num1" type="Integer" array="False"/>
+            <parameter name="num2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resta" type="Integer" array="False" size=""/>
+            <assign variable="resta" expression="num1-num2"/>
+        </body>
+    </function>
+    <function name="seno" type="Real" variable="aprox">
+        <parameters>
+            <parameter name="xrad" type="Real" array="False"/>
+            <parameter name="terminos" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="aprox" type="Real" array="False" size=""/>
+            <assign variable="aprox" expression="0.0"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <for variable="n" start="0" end="terminos-1" direction="inc" step="1">
+                <declare name="numerador" type="Real" array="False" size=""/>
+                <assign variable="numerador" expression="potenciacion(xrad,2*n+1)"/>
+                <declare name="denominador" type="Real" array="False" size=""/>
+                <assign variable="denominador" expression="factorial(2*n+1)"/>
+                <assign variable="aprox" expression="aprox + (potenciacion(-1,n)*(numerador/denominador))"/>
+            </for>
+        </body>
+    </function>
+    <function name="suma" type="Integer" variable="suma">
+        <parameters>
+            <parameter name="num1" type="Integer" array="False"/>
+            <parameter name="num2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="num1+num2"/>
+        </body>
+    </function>
+    <function name="tangente" type="Real" variable="tangente">
+        <parameters>
+            <parameter name="xrad" type="Real" array="False"/>
+            <parameter name="terminos" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="tangente" type="Real" array="False" size=""/>
+            <assign variable="tangente" expression="seno(xrad,terminos)/coseno(xrad,terminos)"/>
+        </body>
+    </function>
+    <function name="varianza" type="Real" variable="varianza">
+        <parameters>
+            <parameter name="tmuestra" type="Integer" array="False"/>
+            <parameter name="muestra" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="promediom" type="Real" array="False" size=""/>
+            <assign variable="promediom" expression="promedio(tmuestra,muestra)"/>
+            <declare name="potenciaresta" type="Integer" array="False" size=""/>
+            <assign variable="potenciaresta" expression="0"/>
+            <declare name="sumatoriaacum" type="Integer" array="False" size=""/>
+            <assign variable="sumatoriaacum" expression="0"/>
+            <declare name="dato" type="Integer" array="False" size=""/>
+            <assign variable="dato" expression="0"/>
+            <for variable="dato" start="1" end="muestra" direction="inc" step="1">
+                <declare name="restadato" type="Real" array="False" size=""/>
+                <assign variable="restadato" expression="dato-promediom"/>
+                <assign variable="potenciaresta" expression="potenciacion(restadato,2)"/>
+                <assign variable="sumatoriaacum" expression="sumatoriaacum+potenciaresta"/>
+            </for>
+            <declare name="varianza" type="Integer" array="False" size=""/>
+            <assign variable="varianza" expression="(sumatoriaacum)/(tmuestra-1)"/>
+        </body>
+    </function>
+</flowgorithm>
